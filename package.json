@@ -5,11 +5,23 @@
   "scripts": {
     "dev": "tsx src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "drizzle:generate": "drizzle-kit generate",
+    "drizzle:push": "drizzle-kit push",
+    "drizzle:studio": "drizzle-kit studio",
+    "db:smoke": "tsx src/booking/support/sqlite/smoke-test-connections.ts"
   },
   "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
     "@types/node": "^22.10.0",
+    "drizzle-kit": "^0.31.11",
     "tsx": "^4.19.2",
     "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.11.1",
+    "drizzle-orm": "^0.45.4",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^1.1.2"
   }
 }

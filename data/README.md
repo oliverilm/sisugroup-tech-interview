@@ -1,0 +1,1 @@
+SQLite files **`booking-drizzle.sqlite`** and **`booking-typeorm.sqlite`** are **created locally** when you run **`npm run dev`** or **`npm run db:smoke`** (they are gitignored). Support seeds the **`rooms`** table on first use.

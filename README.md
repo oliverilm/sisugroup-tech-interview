@@ -1,36 +1,41 @@
 # sisugroup-tech-interview
 
-A small TypeScript (Node.js) project.
+## The bookings app (what you’re building)
 
-## Requirements
+Each **room** has a fixed **capacity** (how many seats/units exist). Users:
 
-- [Node.js](https://nodejs.org/) 18+ (LTS recommended)
-- npm (bundled with Node)
+- **Hold** — reserve some quantity (capacity is “soft-locked” until confirm or release).
+- **Confirm** — turn a hold into a firm booking.
+- **Release** — cancel a hold and free the units.
 
-## Setup
+Your code must keep **totals consistent**: e.g. `available = total − held − confirmed`, never negative holds, reject over-capacity.
 
-Install dependencies:
+This repo **only** provides the **`rooms`** table + seed data. **You** add holds storage and rules (typically in [`src/index.ts`](src/index.ts)). No HTTP required.
 
-```bash
-npm install
-```
+Full candidate-facing spec: [`docs/interview/booking-capacity.md`](docs/interview/booking-capacity.md).
+
+---
+
+## Repo at a glance
+
+| | |
+|--|--|
+| **Your code** | [`src/index.ts`](src/index.ts) (steps + scenarios in comments) |
+| **Provided** | [`src/booking/support/sqlite/`](src/booking/support/sqlite/) — file SQLite DBs, **rooms** only, `npm run db:smoke` (no Docker) |
+
+---
 
 ## Run
 
-**Run TypeScript directly** (no build step; uses [tsx](https://github.com/privatenumber/tsx)):
-
 ```bash
-npm run dev
+npm install
+npm run dev                   # runs src/index.ts; creates data/*.sqlite and seeds rooms if needed
 ```
 
-**Build and run compiled JavaScript:**
+Optional: `npm run build && npm start`, `npm run db:smoke`.
 
-```bash
-npm run build
-npm start
-```
+---
 
-## Project layout
+## Full interview spec
 
-- `src/index.ts` — application entry point
-- `dist/` — compiled output (created by `npm run build`, gitignored)
+See **[`docs/interview/booking-capacity.md`](docs/interview/booking-capacity.md)**.

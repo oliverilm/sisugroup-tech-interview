@@ -1,4 +1,9 @@
 node_modules/
 dist/
+data/*.sqlite
+data/*.sqlite-journal
+data/*-wal
+data/*-shm
+.env
 *.log
 .DS_Store
