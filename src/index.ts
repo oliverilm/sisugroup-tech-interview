@@ -26,7 +26,6 @@ import { seedAllSqliteRoomsOnStartup } from "./booking/support/sqlite/seed-rooms
 
 async function main(): Promise<void> {
   await seedAllSqliteRoomsOnStartup();
-  console.log("Support: `rooms` seeded into SQLite files (`data/`).");
 }
 
 void main();
