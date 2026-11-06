@@ -12,7 +12,7 @@ Model **shared resources** with a fixed capacity **N** per room (e.g. seats, lic
 
 ## Repository (provided for you)
 
-- **`src/booking/support/sqlite/`** — two file databases under **`data/`** (`booking-drizzle.sqlite` and `booking-typeorm.sqlite`), **`rooms` table only**, seeded on first run. The SQLite files are **not** in git (ignored); they are created when you run **`npm run dev`** or **`npm run db:smoke`**. No database server or Docker.
+- **`src/booking/support/sqlite/`** — two database paths under **`data/`** (`booking-drizzle.sqlite` and `booking-typeorm.sqlite`). Empty **0-byte** placeholders are **committed** so the paths exist in git; the first **`npm run dev`** or **`npm run db:smoke`** initializes SQLite on disk and seeds **`rooms`**. No database server or Docker.
 
 Support gives you **room inventory** only (`SEED_ROOMS`). You design and implement **holds** storage (and any schema) yourself. You may use **either** TypeORM **or** Drizzle for your solution, reusing the support entry points if helpful:
 

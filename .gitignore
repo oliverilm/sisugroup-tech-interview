@@ -1,6 +1,6 @@
 node_modules/
 dist/
-data/*.sqlite
+# Boilerplate empty DBs under data/*.sqlite are tracked; ignore SQLite temp files
 data/*.sqlite-journal
 data/*-wal
 data/*-shm

@@ -29,7 +29,7 @@ Full candidate-facing spec: [`docs/interview/booking-capacity.md`](docs/intervie
 
 ```bash
 npm install
-npm run dev                   # runs src/index.ts; creates data/*.sqlite and seeds rooms if needed
+npm run dev                   # runs src/index.ts; initializes data/*.sqlite and seeds rooms (placeholders in git are empty until first run)
 ```
 
 Optional: `npm run build && npm start`, `npm run db:smoke`.
